@@ -1,0 +1,115 @@
+  body {
+            font-family: 'Times New Roman', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            font-family:'Brush Script MT';
+            background-color: #6a4e3c;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-family: 'Copperplate', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .recipe-post {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+     
+        .brownie {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        h3 {
+            font-size: 1.5em;
+            color: rgb(23, 23, 23);
+        }
+
+        ul, ol {
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #5a3d2c;
+        }
+
+        img {
+            max-width: 70%;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+     
+        .social-buttons button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+       
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #6a4e3c;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 1.1em;
+            color:  rgb(23, 23, 23);
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+     
+  
+            .recipe-post {
+                padding: 15px;
+            }
+
+            img {
+                max-width: 70%;
+            }
+        

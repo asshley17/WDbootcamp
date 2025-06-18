@@ -1,0 +1,42 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      background-color: #79bde7;
+      padding: 1rem 2rem;
+      color: rgba(227, 200, 200, 0.615);
+    }
+
+    .navbar-item {
+      margin: 0 1rem;
+      cursor: pointer;
+    }
+
+    /*Center the card*/
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh; /* max coverage */
+      background-color: #f0f0f0;
+    }
+
+    .card {
+      padding: 2rem;
+      background-color: rgba(201, 93, 215, 0.852);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.977);
+      border-radius: 8px;
+      text-align: center;
+      max-width: 300px;
+    }
+
+   

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Portfolio | Arya</title>
+<!--tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Crave Fine Medium'; }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            darklight: {
+              bg: '#1E1F26',
+              card: '#2C2D34',
+              accent: '#7F5AF0',
+              text: '#F5F5F5',
+              subtext: '#A1A1AA'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-darklight-bg text-darklight-text min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-darklight-bg border-b-4 border-darklight-accent">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-6">
+      <div class="flex items-center gap-4">
+        <svg class="w-10 h-10 text-darklight-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M6 2h5v20h-5zM13 2h5v20h-5z"/></svg>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-wide"> Portfolio</h1>
+      </div>
+      <nav class="mt-4 md:mt-0 flex gap-6">
+        <a href="#about" class="hover:text-darklight-accent transition">About</a>
+        <a href="#hobbies" class="hover:text-darklight-accent transition">Hobbies</a>
+        <a href="#projects" class="hover:text-darklight-accent transition">Projects</a>
+        <a href="#skills" class="hover:text-darklight-accent transition">Skills</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Details Grid -->
+  <section class="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+    <div class="bg-darklight-card rounded-xl flex flex-col items-center py-6 shadow-lg">
+      <img src="https://media.licdn.com/dms/image/v2/D4D03AQGx-I3iRoB9KA/profile-displayphoto-shrink_400_400/B4DZUFQ3Q.HIAg-/0/1739550063108?e=1755734400&v=beta&t=zakJfJYMmI2Hn3soZ-YhFB9V93CsRu5_tr30tcbiKAI" alt=" Avatar" class="rounded-full w-24 h-24 mb-2 border-4 border-darklight-accent">
+      <span class="font-semibold text-xl">Arya Shelke</span>
+      <span class="text-darklight-subtext text-sm">Web Developer</span>
+    </div>
+    <div class="bg-darklight-card rounded-xl flex flex-col items-center justify-center py-6 shadow-lg">
+      <span class="font-semibold text-lg">Location</span>
+      <span class="text-darklight-subtext">Manipal, India</span>
+    </div>
+    <div class="bg-darklight-card rounded-xl flex flex-col items-center justify-center py-6 shadow-lg">
+      <span class="font-semibold text-lg mb-2">Contact</span>
+      <div class="flex gap-4">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/arya-shelke" target="_blank" aria-label="LinkedIn" class="hover:text-darklight-accent transition">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/arya.shelke" target="_blank" aria-label="Instagram" class="hover:text-darklight-accent transition">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg>
+        </a>
+        <!-- Email -->
+        <a href="mailto:aryashelke225305@gmail.com" aria-label="Email" class="hover:text-darklight-accent transition">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Sections -->
+  <main class="max-w-6xl mx-auto px-4">
+    <section id="about" class="bg-darklight-card rounded-xl p-6 mt-8 shadow-lg">
+      <h2 class="text-2xl font-bold text-darklight-accent mb-3">About Me</h2>
+      <p class="text-darklight-subtext">Hello! I'm Arya, a beginner web developer...</p>
+    </section>
+
+    <section id="hobbies" class="bg-darklight-card rounded-xl p-6 mt-8 shadow-lg">
+      <h2 class="text-2xl font-bold text-darklight-accent mb-3">My Hobbies & Interests</h2>
+      <ul class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <li class="bg-darklight-bg rounded-lg py-2">Dancing</li>
+        <li class="bg-darklight-bg rounded-lg py-2">Playing guitar</li>
+        <li class="bg-darklight-bg rounded-lg py-2">Exploring new tech tools</li>
+        <li class="bg-darklight-bg rounded-lg py-2">Binge watching</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="bg-darklight-card rounded-xl p-6 mt-8 shadow-lg">
+      <h2 class="text-2xl font-bold text-darklight-accent mb-3">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-darklight-bg rounded-lg p-4">
+          <h3 class="font-semibold text-lg">Personal Portfolio Website</h3>
+          <p class="text-darklight-subtext text-sm">A responsive portfolio...</p>
+        </div>
+        <!-- ... other project cards ... -->
+      </div>
+    </section>
+
+    <section id="skills" class="bg-darklight-card rounded-xl p-6 mt-8 mb-12 shadow-lg">
+      <h2 class="text-2xl font-bold text-darklight-accent mb-3">Skills I Want to Learn</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-center border border-darklight-bg">
+          <thead>
+            <tr>
+              <th class="bg-darklight-accent text-white px-4 py-2">Technology</th>
+              <th class="bg-darklight-accent text-white px-4 py-2">Reason</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-darklight-bg px-4 py-2">JavaScript</td>
+              <td class="border border-darklight-bg px-4 py-2">To add interactivity...</td>
+            </tr>
+            <!-- ... other rows ... -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-darklight-subtext py-6 bg-darklight-bg border-t border-darklight-card">
+    &copy; 2025 Arya Shelke.
+  </footer>
+</body>
+</html>

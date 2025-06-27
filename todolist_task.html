@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f2f5;
+    }
+    h1 {
+      text-align: center;
+      padding: 20px 0;
+      background: #343a40;
+      color: #fff;
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .side-column {
+      flex: 1;
+      min-width: 250px;
+      max-width: 300px;
+    }
+
+    .main-column {
+      flex: 2;
+      min-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .section {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .section h2 {
+      margin-top: 0;
+    }
+
+    .morning { background-color: #fff8dc; }
+    .work { background-color: #e0f7fa; }
+    .afternoon { background-color: #ffe0b2; }
+    .evening { background-color: #ede7f6; }
+    .highlight {
+      background-color: #f4f4f4;
+    }
+
+    .task-input {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .task-input input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .task-input button {
+      padding: 8px 12px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    li {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li.completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .side-column h2 {
+      text-align: center;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 Weekly To-Do List</h1>
+  <div class="container">
+
+    <!-- Completed Tasks Sidebar -->
+    <div class="side-column section highlight">
+      <h2>✅ Completed</h2>
+      <ul id="completed-tasks"></ul>
+    </div>
+
+    <!-- Main Daily Sections -->
+    <div class="main-column">
+      <div class="section morning">
+        <h2>🌞 Morning</h2>
+        <div class="task-input">
+          <input type="text" placeholder="Add a task..." />
+          <button onclick="addTask(this)">Add</button>
+        </div>
+        <ul class="task-list"></ul>
+      </div>
+
+      <div class="section work">
+        <h2>💼 Work / Study</h2>
+        <div class="task-input">
+          <input type="text" placeholder="Add a task..." />
+          <button onclick="addTask(this)">Add</button>
+        </div>
+        <ul class="task-list"></ul>
+      </div>
+
+      <div class="section afternoon">
+        <h2>🕒 Afternoon</h2>
+        <div class="task-input">
+          <input type="text" placeholder="Add a task..." />
+          <button onclick="addTask(this)">Add</button>
+        </div>
+        <ul class="task-list"></ul>
+      </div>
+
+      <div class="section evening">
+        <h2>🌙 Evening</h2>
+        <div class="task-input">
+          <input type="text" placeholder="Add a task..." />
+          <button onclick="addTask(this)">Add</button>
+        </div>
+        <ul class="task-list"></ul>
+      </div>
+    </div>
+
+    <!-- Pending Tasks Sidebar -->
+    <div class="side-column section highlight">
+      <h2>📌 Pending</h2>
+      <ul id="pending-tasks"></ul>
+    </div>
+  </div>
+
+  <script>
+    function addTask(button) {
+      const input = button.previousElementSibling;
+      const text = input.value.trim();
+      if (text === '') return;
+
+      const taskList = button.closest('.section').querySelector('.task-list');
+      const li = createTaskElement(text);
+      taskList.appendChild(li);
+      input.value = '';
+      updateSummaryLists();
+    }
+
+    function createTaskElement(text) {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span>${text}</span>
+        <div class="actions">
+          <button onclick="toggleComplete(this)">✔</button>
+          <button onclick="deleteTask(this)">🗑</button>
+        </div>
+      `;
+      return li;
+    }
+
+    function toggleComplete(button) {
+      const li = button.closest('li');
+      li.classList.toggle('completed');
+      updateSummaryLists();
+    }
+
+    function deleteTask(button) {
+      const li = button.closest('li');
+      li.remove();
+      updateSummaryLists();
+    }
+
+    function updateSummaryLists() {
+      const allTasks = document.querySelectorAll('.task-list li');
+      const pendingList = document.getElementById('pending-tasks');
+      const completedList = document.getElementById('completed-tasks');
+
+      pendingList.innerHTML = '';
+      completedList.innerHTML = '';
+
+      allTasks.forEach(task => {
+        const clone = task.cloneNode(true);
+        clone.querySelectorAll('button')[0].setAttribute('onclick', 'toggleComplete(this)');
+        clone.querySelectorAll('button')[1].setAttribute('onclick', 'deleteTask(this)');
+
+        if (task.classList.contains('completed')) {
+          completedList.appendChild(clone);
+        } else {
+          pendingList.appendChild(clone);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
